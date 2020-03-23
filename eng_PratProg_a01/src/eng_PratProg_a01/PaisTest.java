@@ -96,12 +96,15 @@ public class PaisTest {
 		pais.reset5();
 		
 		Pais[] paises = new Pais[3];
+		for(int i = 0; i < 3; i++) {
+			paises[i] = new Pais();
+		}
 		paises = pais.tresPaises();
-		assertEquals(paises[0].getId(), "1");
+		assertEquals(paises[0].getId(), 1);
 		assertEquals(paises[0].getNome(), "Brasil");
-		assertEquals(paises[1].getId(), "2");
+		assertEquals(paises[1].getId(), 2);
 		assertEquals(paises[1].getNome(), "Bielorussia");
-		assertEquals(paises[2].getId(), "3");
+		assertEquals(paises[2].getId(), 3);
 		assertEquals(paises[2].getNome(), "Canada");
 		
 	}

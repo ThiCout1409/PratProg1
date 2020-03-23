@@ -138,6 +138,9 @@ public class Pais {
 
 	public Pais[] tresPaises(){
 		Pais[] paises = new Pais[3];
+		for(int i = 0; i < 3; i++) {
+			paises[i] = new Pais();
+		}
 
 		String sqlSelect = "SELECT id, nome FROM pais";
 
