@@ -9,13 +9,12 @@ public class ClienteDAO {
 
 	public static void incluir(Cliente to) {
 		String sqlInsert = "INSERT INTO cliente(id, nome, fone, email) VALUES (?, ?, ?,?)";
-		// usando o try with resources do Java 7, quefecha o queabriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
 			stm.setInt(1, to.getId());
 			stm.setString(2, to.getNome());
 			stm.setString(3, to.getFone());
-			stm.setString(4,to.getEmail());
+			stm.setString(4, to.getEmail());
 			stm.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
