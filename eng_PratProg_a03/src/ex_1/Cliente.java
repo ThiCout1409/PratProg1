@@ -2,7 +2,7 @@ package ex_1;
 
 import java.io.Serializable;
 
-public class Pais implements Serializable {
+public class Cliente implements Serializable {
 
 	/**
 	 * 
@@ -13,9 +13,9 @@ public class Pais implements Serializable {
 	private String fone;
 	private String email;	
 
-	public Pais() {}
+	public Cliente() {}
 	
-	public Pais(int id, String nome, String fone, String email) {
+	public Cliente(int id, String nome, String fone, String email) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -60,7 +60,7 @@ public class Pais implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Pais other = (Pais) obj;
+		Cliente other = (Cliente) obj;
 		if (nome == null) {
 			if (other.nome != null )
 				return false;

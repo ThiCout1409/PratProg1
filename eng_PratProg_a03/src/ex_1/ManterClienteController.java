@@ -23,12 +23,12 @@ public class ManterClienteController extends HttpServlet {
 		String pFone = request.getParameter("fone");
 		String pEmail = request.getParameter("email");
 		//instanciar o javabean
-		Pais cliente = new Pais();
+		Cliente cliente = new Cliente();
 		cliente.setNome(pNome);
 		cliente.setFone(pFone);
 		cliente.setEmail(pEmail);
 		//instanciar o service
-		PaisService cs = new PaisService();
+		ClienteService cs = new ClienteService();
 		cs.criar(cliente);
 		cliente = cs.carregar(cliente.getId());
 		PrintWriter out = response.getWriter();
