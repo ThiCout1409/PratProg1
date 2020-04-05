@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class ClienteDAO {
 
-	public static void incluir(Pais to) {
+	public static void incluir(Cliente to) {
 		String sqlInsert = "INSERT INTO cliente(id, nome, fone, email) VALUES (?, ?, ?,?)";
 		try (Connection conn = ConnectionFactory.obtemConexao();
 				PreparedStatement stm = conn.prepareStatement(sqlInsert);) {
@@ -29,7 +29,7 @@ public class ClienteDAO {
 			e.printStackTrace();
 		}
 	}
-	public static void atualizar(Pais to) {
+	public static void atualizar(Cliente to) {
 		String sqlUpdate = "UPDATE cliente SET nome=?, fone=?, email=? WHERE id=?";
 		// usando o try with resources do Java 7, quefecha o queabriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
@@ -43,7 +43,7 @@ public class ClienteDAO {
 			e.printStackTrace();
 		}
 	}
-	public static void excluir(Pais to) {
+	public static void excluir(Cliente to) {
 		String sqlDelete = "DELETE FROM cliente WHERE id = ?";
 		// usando o try with resources do Java 7, quefecha o queabriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
@@ -54,8 +54,8 @@ public class ClienteDAO {
 			e.printStackTrace();
 		}
 	}
-	public static Pais carregar(int id) {
-		Pais to = new Pais();
+	public static Cliente carregar(int id) {
+		Cliente to = new Cliente();
 		String sqlSelect = "SELECT id, nome, fone, email FROM cliente WHERE cliente.id = ?";
 		// usando o try with resources do Java 7, quefecha o queabriu
 		try (Connection conn = ConnectionFactory.obtemConexao();
